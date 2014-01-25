@@ -1,0 +1,65 @@
+
+Hi there!
+
+On behalf of the team at ByBox, thanks for taking the time to download our test and submit your own solution. This pre-screening test is unlike and (hopefully) a bit more interesting than many others. The idea is to take the sample application included and improve it. We're not looking for you to solve the Travelling Salesman problem or calculate the number of positive bits in any given 32-bit integer; we're looking for people with an eye for detail who can take some software and leave it better than when they found it.
+
+Please find all the instructions you should need below. Apologies if they seem strict - it's only because we have many tests to review and need your help to be as efficient as possible to get everyone a prompt reply. We want you to have a bit of fun with this, but of course running, debugging and testing these submissions takes time so please bear with us. Happy coding! :)
+
+What to do:
+-----------
+1. Read this document completely.
+2. Open Visual Studio and carry out the tasks as described below.
+3. Return the test and any additional recommendations to us via email to mark.bromwell@bybox.com.
+ ** Our email virus scanner may block your email if it contains executable files. You'll get a reply from the mail server if this is the case and should find an alternative online service for transmitting your coding test results to ByBox.
+ ** You'll get a direct reply, but only to acknowledge receipt of your coding test.
+ ** Any actual feedback on your coding test will arrive via your recruitment consultant.
+ ** Your submission will be tested by opening the solution in Visual Studio 2012 Professional, choosing the startup projects and pressing F5. You should include any additional instructions to ensure this works but please keep it simple and obvious.
+ ** We will only review your first submission. Subsequent updates will not be considered.
+ ** You should assume the person reviewing your submission will have a SQL Server database called "PoolCarManager" created using the script included in the solution, containing some real data that needs to be maintained.
+ ** Ensure any connection strings are compatible with the following: "Data Source=(local);Initial Catalog=PoolCarManager;Integrated Security=True" so your solution "just works".
+ ** If the solution does not compile and run according to the requirements above, unfortunately it can't be considered further.
+
+
+ByBox Software Developer Pre-screening coding test
+--------------------------------------------------
+A fictional software company called MyDesign Ltd has a number of company cars available for employees to use when visiting customers. The team responsible for managing the pool cars wished to be able to record the journeys people made in those cars, and so the development team were tasked with creating a simple desktop application to do so. Subsequently a web-based version has been built, though the desktop version remains in active use.
+
+The software is very simple, and currently only allows the user to add vehicles, and add journeys for those vehicles. Even adding new drivers has to be done by the development team directly in the database. There have been complaints of bugs in the software on the latest version (which means it hasn't even been deployed) and though there are requirements for new features, the development team is currently busy on other tasks. As such you have been brought in to find and resolve any issues, and implement some much-needed new features. There isn't much documentation available as it is a simple internal tool, so you will need to run the app and try it out to get an idea of how it works.
+
+
+Key points:
+-----------
+* Enclosed is a Visual Studio 2010 Professional solution using .NET framework 4.0. It is a simple application called "Pool Car Manager" that has both a web and desktop UI. 
+* Also enclosed is a database script file that will create a simple test database for you.
+* If you have a preference, you may choose between the web and desktop projects and won't lose points if you ignore bugs and feature requests for the other. We will of course happily accept changes to the solution as a whole, so feel free to look at both if you like. Note: Any changes you make in one project should not compromise the other.
+
+
+Your aim:
+---------
+Again, you may choose to work on the desktop app, web app, or both - it's your choice.
+
+Desktop app:
+* Find and fix bugs.
+* Implement the ability to manage the list of drivers that can be selected when adding a new journey.
+* Implement the ability to record fuel usage - so that each time a vehicle is refuelled, the current mileage, amount of fuel purchased and the fuel price is recorded.
+* Change the UI so that double-clicking on a vehicle opens the edit dialog for that vehicle.
+
+Web app:
+* Find and fix bugs.
+* Implement the ability to manage the list of drivers that can be selected when adding a new journey.
+* Implement the ability to record fuel usage - so that each time a vehicle is refuelled, the current mileage, amount of fuel purchased and the fuel price is recorded.
+* Add a hyperlink to add a new journey from the edit vehicle page.
+
+
+For bonus points:
+-----------------
+Where you feel it is appropriate, go ahead and make any refactorings or improvements you consider suitable to improve the look and feel, design or architecture of the software. For future development, we would happily receive a list of recommendations for changes that you don't have time to implement.
+
+Some examples of things you might want to consider:
+* Implementing IoC where applicable.
+* Changing from Linq to SQL to a different data access technology.
+* Exception handling/logging.
+
+
+------------------------------------------
+Pre-screening coding test instructions v3.

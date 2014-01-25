@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEFD6466-4418-4965-8BDD-BF7C66C1A4BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoolCarManager.Desktop</RootNamespace>
+    <AssemblyName>PoolCarManager.Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AddJourneyCommandHandler.cs" />
+    <Compile Include="Commands\AddJourneyCommand.cs" />
+    <Compile Include="Commands\AddVehicleCommand.cs" />
+    <Compile Include="Commands\AddVehicleCommandHandler.cs" />
+    <Compile Include="Commands\EditVehicleCommand.cs" />
+    <Compile Include="Commands\EditVehicleCommandHandler.cs" />
+    <Compile Include="EditVehicleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditVehicleDialog.Designer.cs">
+      <DependentUpon>EditVehicleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditVehicleViewModel.cs" />
+    <Compile Include="Events\JourneyAddedEvent.cs" />
+    <Compile Include="Events\VehicleAddedEvent.cs" />
+    <Compile Include="Events\DomainEvents.cs" />
+    <Compile Include="Events\IHandleDomainEvent.cs" />
+    <Compile Include="Events\VehicleEditedEvent.cs" />
+    <Compile Include="JourneyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JourneyDialog.Designer.cs">
+      <DependentUpon>JourneyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JourneyDialogViewModel.cs" />
+    <Compile Include="JourneyListViewModel.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleListItemViewModel.cs" />
+    <EmbeddedResource Include="EditVehicleDialog.resx">
+      <DependentUpon>EditVehicleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JourneyDialog.resx">
+      <DependentUpon>JourneyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PoolCarManager.Core\PoolCarManager.Core.csproj">
+      <Project>{87FBD9F8-87CC-4B71-BA6B-32F346307B79}</Project>
+      <Name>PoolCarManager.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoolCarManager.Model\PoolCarManager.Model.csproj">
+      <Project>{455D40C5-17E8-46E9-8FB3-51600CF5BED0}</Project>
+      <Name>PoolCarManager.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoolCarManager.Querying\PoolCarManager.Querying.csproj">
+      <Project>{EAB043EB-0C72-47ED-82E6-6417AAED9308}</Project>
+      <Name>PoolCarManager.Querying</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

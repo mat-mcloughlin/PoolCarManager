@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PoolCarManager.Web.Models.VehicleIndexItemViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add Vehicle", "Add")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Registration
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Add Journey", "Add", "Journey", new { id=item.Id }, null)
+        </td>
+        <td>
+            @item.Registration
+        </td>
+        <td>
+            @item.Description
+        </td>
+    </tr>
+}
+
+</table>
+

@@ -1,0 +1,75 @@
+﻿@model PoolCarManager.Web.Models.JourneyAddViewModel
+
+@{
+    ViewBag.Title = string.Format("Add Journey for {0}", Model.Registration);
+}
+
+<h2>Add</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DriverId):
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DriverId, new SelectList(Model.Drivers, "Id", "Name", Model.DriverId), "<Select Driver>")
+            @Html.ValidationMessageFor(model => model.DriverId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FromLocation):
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FromLocation)
+            @Html.ValidationMessageFor(model => model.FromLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToLocation):
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToLocation)
+            @Html.ValidationMessageFor(model => model.ToLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reason):
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reason)
+            @Html.ValidationMessageFor(model => model.Reason)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartMileage):
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartMileage)
+            @Html.ValidationMessageFor(model => model.StartMileage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndMileage):
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndMileage)
+            @Html.ValidationMessageFor(model => model.EndMileage)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+            @Html.HiddenFor(model => model.VehicleId)
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Vehicles", "Index", "Vehicle")
+</div>
+
